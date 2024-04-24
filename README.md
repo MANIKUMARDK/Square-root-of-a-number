@@ -16,20 +16,22 @@ To write a program to find the square root of a number.
 
 ## Program:
 ```
-/*
-Program to find the square root for the given number(newton's method) using function.
-Developed by: MANIKUMAR D.K
-RegisterNumber: 212223230121
-*/
-
-def newton(n,nt=100):
-    a=float(n)
-    for i in range(nt):
-        n=0.5*(n+a/n)
-    return n
-a=int(input())
-print("Square root of the number:",newton(a))
-
+#Square root of a number
+#Developed by: MANIKUMAR D.K
+#Register number: 212223230121
+def newton_square_root(b):
+    if b<0:
+        print("The Square root is not defined for negative number")
+    x=b/2.0
+    while True:
+        new_x=0.5*(x+b/x)
+        if new_x==x:
+            break
+        x=new_x
+    return x
+b=int(input())
+result = newton_square_root(b)
+print(f"Square root of the number: {result}")
 ```
 
 ## Output:
