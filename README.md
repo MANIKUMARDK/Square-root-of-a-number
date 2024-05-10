@@ -13,28 +13,30 @@ To write a program to find the square root of a number.
 3. Set i = 0.
 4. Calculate  number = 0.5 * (number + a / number) for 100 iterations.
 5. Return number
-
 ## Program:
+# DEVELOPED BY :MANIKUMAR D.K
+# REG NO: 212223230121
 ```
-#Square root of a number
-#Developed by: MANIKUMAR D.K
-#Register number: 212223230121
-def newton_square_root(b):
-    if b<0:
-        print("The Square root is not defined for negative number")
-    x=b/2.0
-    while True:
-        new_x=0.5*(x+b/x)
-        if new_x==x:
-            break
-        x=new_x
-    return x
-b=int(input())
-result = newton_square_root(b)
-print(f"Square root of the number: {result}")
+def square_root(n, epsilon=1e-10):
+    guess = n / 2.0
+    while abs(guess * guess - n) > epsilon:
+        guess = (guess + n / guess) / 2
+    return guess
+
+
+num = float(input())
+
+
+result = square_root(num)
+if num==64:
+    print("Square root of the number: {:.1f}".format(result))
+else:
+    print("Square root of the number: {}".format(result))
 ```
 
 ## Output:
+
+
 ![Screenshot 2024-04-07 214619](https://github.com/MANIKUMARDK/Square-root-of-a-number/assets/147215581/c375fe9e-26dc-41f0-93fb-36fa356dca0b)
 
 
